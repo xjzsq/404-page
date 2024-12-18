@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 Not Found</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        html,
+        body {
+            height: 100%
+        }
+
+        body {
+            background: black;
+        }
+
+        .outWrap {
+            position: fixed;
+            top: 30%;
+            left: 15%;
+            display: flex;
+            animation: moveFiexd 4s forwards
+        }
+
+        .font {
+            height: 150px;
+            color: white;
+            font-size: 131px;
+            line-height: 177px;
+            opacity: 0;
+            animation: transparency 4s forwards
+        }
+
+        .back {
+            height: 150px;
+            color: white;
+            font-size: 131px;
+            line-height: 177px;
+            opacity: 0;
+            animation: transparency 4s forwards
+        }
+
+        .wrap {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-end;
+        }
+
+        .wrapOver {
+            position: relative;
+            width: 100px;
+            height: 50px;
+            overflow: hidden
+        }
+
+        .circle1 {
+            position: absolute;
+            box-sizing: border-box;
+            width: 100px;
+            height: 100px;
+            border: 15px solid white;
+            border-radius: 50%;
+            transform: translateY(100%) scaleX(70%);
+            filter: blur(2px);
+            animation: myMoveTop 2s forwards;
+            opacity: 0.3;
+        }
+
+        .circle2 {
+            position: absolute;
+            box-sizing: border-box;
+            width: 100px;
+            height: 100px;
+            border: 15px solid white;
+            border-radius: 50%;
+            transform: translateY(-150%) scaleX(70%);
+            filter: blur(2px);
+            animation: myMoveBottom 2s forwards;
+            opacity: 0.3;
+        }
+
+        .bottomSliver {
+            width: 0px;
+            height: 5px;
+            background: #00a1d6;
+            margin-top: 5px;
+            animation: myMoveSliver 4s forwards
+        }
+
+        @keyframes transparency {
+            50% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes myMoveSliver {
+            50% {
+                width: 0px;
+            }
+
+            100% {
+                width: 50px;
+            }
+        }
+
+        @keyframes myMoveBottom {
+            70% {
+                filter: blur(2px);
+                opacity: 0.8;
+            }
+
+            100% {
+                transform: translateY(-50%) scaleX(70%);
+                filter: blur(0px);
+                opacity: 1;
+            }
+        }
+
+        @keyframes myMoveTop {
+            70% {
+                filter: blur(0px);
+                opacity: 0.8;
+            }
+
+            100% {
+                transform: scaleX(70%);
+                filter: blur(0px);
+                opacity: 1;
+            }
+        }
+
+        @keyframes moveFiexd {
+            50% {
+                left: 15%;
+            }
+
+            100% {
+                left: 30%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="outWrap">
+        <div class="font">4</div>
+        <div class="wrap">
+            <div class="wrapOver">
+                <div class="circle1"></div>
+            </div>
+            <div class="wrapOver">
+                <div class="circle2"></div>
+            </div>
+            <div class="bottomSliver"></div>
+        </div>
+        <div class="back">4 Not Found</div>
+    </div>
+
+</body>
+
+</html>
